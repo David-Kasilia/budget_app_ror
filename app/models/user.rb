@@ -5,5 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable, :lockable, :trackable
 
+  # Validations for the user model
+    validates :name, presence: true, allow_blank: false
+
   ROLES = %i[admin default].freeze
 end
