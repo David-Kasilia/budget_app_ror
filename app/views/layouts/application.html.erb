@@ -12,9 +12,18 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
 
+    <% if alert %>
+    <div class="alert alert-danger">
+      <%= alert%>
+    </div>
+    <% end %>
+    <% if notice %>
+    <div class="alert alert-success">
+      <%= notice%>
+    </div>
+    <% end %>
+    
    <% if user_signed_in? %>
       <p >Logged in as <strong style="color: Green">(<%= current_user.email %>)</strong>.</p>
       <a href="/" class="nav-link">Home</a>
