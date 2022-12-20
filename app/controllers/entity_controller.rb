@@ -18,7 +18,7 @@ class EntityController < ApplicationController
 
     if @entity.valid?
       @entity.save
-      redirect_to user_group_entity_index_path(id: current_user.id, group_id: @entity.group_id)
+      redirect_to user_group_entity_index_path(id: current_user.id, group_id: params[:id])
     else
       render new
     end
@@ -27,7 +27,7 @@ class EntityController < ApplicationController
   def destroy
     @entity = Entity.find_by(id: params[:id])
 
-    redirect_to user_group_entity_index_path(id: current_user.id, group_id: @entity.group_id)
+    redirect_to user_group_entity_index_path(id: current_user.id, group_id: params[:id])
 
     if @entity.destroy
       flash[:notice] = 'Entity was successfully destroyed.'

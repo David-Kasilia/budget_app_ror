@@ -1,2 +1,30 @@
-<h1>Group#new</h1>
-<p>Find me in app/views/group/new.html.erb</p>
+<div class="new-food-container d-grid justify-content-center">
+<h1>Create New Category</h1>
+
+<%= form_with model: Group, url: user_group_index_path(current_user.id) do |f| %>
+ <div class="form-group">
+       <div class="form-outline mb-4">
+            <%= f.label :name, class: "form-label" %><br />
+            <%= f.text_field :name, class: "form-control form-control-lg" %>
+        </div>
+
+        <div class="form-outline mb-4">
+            <%= f.label :icon, class: "form-label" %><br />
+            <%= f.text_field :icon, class: "form-control form-control-lg" %>
+        </div>
+
+        <div class="form-outline mb-4">
+            <%= f.label :author_id, class: "form-label" %><br />
+            <%= f.collection_select(:author_id, User.all, :id, :name,class: "form-control form-control-lg" ) %>
+        </div>
+        <div class="form-outline mb-4">
+            <%= f.label :entity_id, class: "form-label" %><br />
+            <%= f.select(:entity_id, Entity.all.map{|u| [u.name, u.id]}, class: "form-control form-control-lg" ) %>
+        </div>
+
+        <div class="submit-btn">
+             <%= f.submit 'Add Category',  class: "btn btn-primary btn-lg btn-block"  %>
+        </div>
+    </div>
+<% end %>
+</div>

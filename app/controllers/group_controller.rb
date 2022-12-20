@@ -13,8 +13,8 @@ class GroupController < ApplicationController
   end
 
   def create
-    @group = Group.new(group_params)
-    @group.author_id = current_user.id
+    @author = User.find_by(id: params[:id])
+    @group = @author.groups.new(group_params)
     if @group.valid?
       @group.save
       redirect_to user_group_index_path(id: current_user.id)
@@ -37,7 +37,7 @@ class GroupController < ApplicationController
   private
 
   def group_params
-    params.require(:group).permit(:name, :icon, :author_id, :entity_id)
+    params.require(:group).permit(:name, :icon)
   end
 
 end
