@@ -13,11 +13,11 @@ class GroupController < ApplicationController
   end
 
   def create
-    @author = User.find_by(id: params[:id])
-    @group = @author.groups.new(group_params)
+   @group = Group.create(group_params)
+   @group.author = current_user
     if @group.valid?
       @group.save
-      redirect_to user_group_index_path(id: current_user.id)
+      redirect_to user_group_index_path(current_user.id)
     else
       render :new
     end
@@ -25,7 +25,7 @@ class GroupController < ApplicationController
 
   def destroy
     @group = Group.find_by(id: params[:id])
-    redirect_to user_group_index_path(id: current_user.id)
+    redirect_to user_group_index_path(current_user.id)
     if @group.destroy
      flash[:notice] = 'Group was successfully destroyed.'
     else
