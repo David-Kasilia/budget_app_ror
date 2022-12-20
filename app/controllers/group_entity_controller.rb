@@ -1,6 +1,6 @@
 class GroupEntityController < ApplicationController
   def index
-    @group_entity = GroupEntity.all
+    group_entities = GroupEntity.all
   end
 
   def show
