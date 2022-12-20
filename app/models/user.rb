@@ -7,8 +7,8 @@ class User < ApplicationRecord
 
   # Database relations
 
-  has_many :entities, dependent: :destroy
-  has_many :groups, dependent: :destroy
+  has_many :entities, foreign_key: 'author_id',  dependent: :destroy
+  has_many :groups, foreign_key: 'author_id', dependent: :destroy
 
   # Validations for the user model
     validates :name, presence: true, allow_blank: false

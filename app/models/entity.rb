@@ -1,8 +1,9 @@
 class Entity < ApplicationRecord
 
     # Database relations
-    belongs_to :author, class_name: 'User', foreign_key: 'user_id'
-    has_and_belongs_to_many :groups, dependent: :destroy
+    belongs_to :author, class_name: 'User'
+    has_many :groups, through: :group_entities
+    has_many :group_entities, dependent: :destroy
 
     # Validations for the entitiy model
   validates :name, presence: true, allow_blank: false
