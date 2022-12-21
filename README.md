@@ -134,9 +134,9 @@ https://www.loom.com/share/940be76958744ae58bb95be2db9ba869
 
 > 👤 **David Kasilia Mwanzia**
 
-- GitHub: [@David-Kasilia ](https://github.com/githubhandle)
-- Twitter: [@DavidKasilia](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@David-Kasilia ](https://github.com/David-Kasilia)
+- Twitter: [@DavidKasilia](https://twitter.com/DavidKasilia)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/david-kasilia/)
 
 > Original design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella).
 
@@ -149,7 +149,7 @@ User Interface follows the [design guidelines](https://www.behance.net/gallery/1
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/David-Kasilia/budget_app_ror/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
