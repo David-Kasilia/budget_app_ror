@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   
-  root to: 'group#index'
+
+  devise_scope :user do
+      root to: 'devise/sessions#index'
+  end
   
   resources :user do
     resources :group 
@@ -10,6 +13,7 @@ Rails.application.routes.draw do
   end
   
   # Routes
+  # get 'splash_screen/index'
   # get 'group_entity/index'
   # get 'group_entity/show'
   # get 'group_entity/new'

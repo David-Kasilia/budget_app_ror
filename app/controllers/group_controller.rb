@@ -1,4 +1,5 @@
 class GroupController < ApplicationController
+    before_action :authenticate_user!
   def index
     @groups = Group.where(author: current_user).includes(:group_entities).order(created_at: :desc).limit(10)
     @name = current_user.name

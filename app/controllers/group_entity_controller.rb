@@ -1,4 +1,5 @@
 class GroupEntityController < ApplicationController
+    before_action :authenticate_user!
   def index
     @group_entities = GroupEntity.all
   end
