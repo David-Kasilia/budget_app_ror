@@ -1,4 +1,12 @@
-<div class="new-food-container d-grid justify-content-center">
+<nav class="navbar d-flex justify-content-around" style="background-color: #3778c2;">
+  <a class="nav-link" href="/">
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" class="bi bi-arrow-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+</svg></a>
+  <h2 class="fw-semibold text-uppercase mx-auto" style="color: white">New Entity</h2>
+</nav>
+
+<div class="new-food-container d-grid justify-content-center mt-2">
     <h1>Create New Entity</h1>
   <%= form_with(model: @entity, url: user_group_entity_index_url, method: :post) do |f| %>
     <div class="form-group">
@@ -12,7 +20,9 @@
         </div>
           <div class="form-outline mb-4">
             <%= f.label :group_id, class: "form-label" %><br />
-            <%= f.select(:group_id, Group.all.map{|u| [u.name, u.id]}, class: "form-control form-control-lg" ) %>
+             <%= select_tag "group", options_for_select(@groups.map { |group| [group.name, group.id] }), 
+      {prompt: 'Select Category', required: true, 
+       class: "col-12 p-2 border rounded dropdown-toggle"} %>
         </div>
         <div class="submit-btn">
              <%= f.submit 'Add Entity',  class: "btn btn-primary btn-lg btn-block"  %>

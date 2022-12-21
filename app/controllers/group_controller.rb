@@ -1,11 +1,14 @@
 class GroupController < ApplicationController
   def index
-    @groups = Group.all
+    @groups = Group.where(author: current_user).includes(:group_entities).order(created_at: :desc).limit(4)
+    @name = current_user.name
   end
 
   def show
     @group = Group.find_by(id: params[:id])
-
+    @group_entities = GroupEntity.includes(:entity).where(group_id: @group).order(created_at: :desc)
+    @total = 0
+    @group_entities.each { |e| @total += e.entity.amount}
   end
 
   def new

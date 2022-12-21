@@ -40,12 +40,12 @@
 <section>
 <% if !@groups.empty? %>
 <% @groups.each do |g|%>
-      <div class="card mb-3 me-3 ms-3 pb-4">
+      <div class="card mb-3 me-3 ms-3 pb-4 mt-2">
           <div class="card-body">
             <div class="d-flex justify-content-between p-md-1">
               <div class="d-flex flex-row">
                 <div style="width: 6rem; height:6rem">
-`                   <%= image_tag ("#{g.icon}"), alt: "Cartegory Icon Photo", class:"img-fluid rounded-start", style:"width: 100%; height:100%" %> 
+                  <%= image_tag ("#{g.icon}"), alt: "Cartegory Icon Photo", class:"img-fluid rounded-start", style:"width: 100%; height:100%" %> 
                </div>
                 <div class="mt-4 me-4 ms-3">
                     <%= link_to user_group_path(current_user.id, g.id), class:'text-decoration-none' do %>
@@ -58,7 +58,9 @@
               </div>
               <div class="align-self-center">
                 <h4 class="card-text mb-0 me-3 fw-semibold">
-                Total: $
+                <% @total = 0 %>
+                <% g.group_entities.each { |e| @total += e.entity.amount } %>
+                <p class="card-text mt-4">Total: $<%= @total %></p>
                 </h4>
               </div>
             </div>
