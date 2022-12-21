@@ -1,5 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Group, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+ before(:each) do
+        @user = User.create(name: 'David', email:'david001@gmail.com', password:'password')
+        @group = Group.create(author: @user, name: 'Food', icon: 'https://icon_url')
+    end
+
+    scenario 'valid group' do
+        expect(@group).to be_valid
+    end
 end
