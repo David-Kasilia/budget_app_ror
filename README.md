@@ -121,7 +121,7 @@ You can deploy this project using:
 
 ### Project Documentation
 >  Below is a link to the project documentation: <br/>
-https://www.loom.com/share/940be76958744ae58bb95be2db9ba869
+https://www.loom.com/share/940be76958744ae58bb95be2db9ba869 <br />
 > Link with documentation with piece of code: <br/>
 https://www.loom.com/share/2ca5bbea4c3b4422bdb60b3441d678f2
 
