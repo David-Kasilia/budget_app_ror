@@ -36,7 +36,6 @@ class EntityController < ApplicationController
     end
   end
 
-
   private
 
   def entity_params

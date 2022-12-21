@@ -1,5 +1,5 @@
 class GroupEntityController < ApplicationController
-    before_action :authenticate_user!
+  before_action :authenticate_user!
   def index
     @group_entities = GroupEntity.all
   end
@@ -23,7 +23,6 @@ class GroupEntityController < ApplicationController
       flash[:alert] = 'Entity Not Created'
     end
   end
-
 
   private
 

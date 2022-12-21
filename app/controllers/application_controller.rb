@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def after_sign_in_path_for(user)
+  def after_sign_in_path_for(_user)
     user_group_index_path(current_user.id)
   end
 end
