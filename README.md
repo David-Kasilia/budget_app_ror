@@ -109,7 +109,8 @@ To run tests, run the following command:
 ### Deployment
 
 You can deploy this project using:
-> Heroku
+> Render
+> Here is a link to the deployment: https://budget-app-5474.onrender.com
 
 
 
