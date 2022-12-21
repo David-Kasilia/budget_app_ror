@@ -1,14 +1,22 @@
 Rails.application.routes.draw do
   devise_for :users
+  
 
-  root to: 'group#index'
-
-  resources :user do
-    resources :group do
-      resources :entity
-    end
+  devise_scope :user do
+      root to: 'devise/sessions#index'
   end
   
+  resources :user do
+    resources :group 
+    resources :entity
+    resources :group_entity
+  end
+  
+  # Routes
+  # get 'splash_screen/index'
+  # get 'group_entity/index'
+  # get 'group_entity/show'
+  # get 'group_entity/new'
   # get 'group/index'
   # get 'group/show'
   # get 'group/new'
@@ -19,8 +27,5 @@ Rails.application.routes.draw do
   # get 'entity/create'
   # get 'user/index'
   # get 'user/show'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
 end

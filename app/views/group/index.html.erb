@@ -1,2 +1,81 @@
-<h1>Group#index</h1>
-<p>Find me in app/views/group/index.html.erb</p>
+<nav class="navbar" style="background-color: #3778c2; >
+  <div class="container-fluid justify-content-start" style="background-color: #3778c2;">
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-list" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+        </svg>
+    </button>
+    <div class="mx-auto" >
+    <h2 class="fw-semibold text-uppercase" style="color: white">Categories</h2>
+    </div>
+    <div class="mb-1">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" class="bi bi-search" viewBox="0 0 16 16">
+    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+    </svg>
+    </div>
+    
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+       <% if user_signed_in? %>
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+      <p >Logged in as <strong style="color: Green">(<%= current_user.email %>)</strong>.</p>
+     </h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+           <%= link_to "Home", user_group_index_path(current_user.id), class:"nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Edit profile', edit_user_registration_path, class: "nav-link " %> 
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Users', user_index_path, class: "nav-link " %> 
+          </li>
+        </ul>
+         <%= button_to 'logout', destroy_user_session_path, data: {turbo: false}, method: :delete, class: "mt-3 btn btn-danger" %>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</nav>
+<section>
+<% if !@groups.empty? %>
+<% @groups.each do |g|%>
+      <div class="card mb-3 me-3 ms-3 pb-4 mt-2">
+          <div class="card-body">
+            <div class="d-flex justify-content-between p-md-1">
+              <div class="d-flex flex-row">
+                <div style="width: 6rem; height:6rem">
+                  <%= image_tag ("#{g.icon}"), alt: "Cartegory Icon Photo", class:"img-fluid rounded-start", style:"width: 100%; height:100%" %> 
+               </div>
+                <div class="mt-4 me-4 ms-3">
+                    <%= link_to user_group_path(current_user.id, g.id), class:'text-decoration-none' do %>
+                    <h5 class="card-title">
+                    <%= g.name %>
+                    </h5>   
+                    <% end %>
+                    <p class="card-text mt-4"><%= g.created_at.strftime("%d %h %Y") %></p>
+                </div>
+              </div>
+              <div class="align-self-center">
+                <h4 class="card-text mb-0 me-3 fw-semibold">
+                <% @total = 0 %>
+                <% g.group_entities.each { |e| @total += e.entity.amount } %>
+                <p class="card-text mt-4">Total: $<%= @total %></p>
+                </h4>
+              </div>
+            </div>
+        </div>
+        </div>
+<% end %>
+    <% else %>
+        <div class="d-flex justify-content-center">
+            <h3 class="text-center">You have no categories yet</h3>
+        </div>
+    <% end %>
+ <div class="d-flex justify-content-center">
+    <%= link_to 'Add Category', new_user_group_path(current_user.id), class: "btn btn-dark p-3" %>
+  </div>
+</section>

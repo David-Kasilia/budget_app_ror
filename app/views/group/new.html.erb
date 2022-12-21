@@ -1,2 +1,54 @@
-<h1>Group#new</h1>
-<p>Find me in app/views/group/new.html.erb</p>
+<nav class="navbar d-flex justify-content-around" style="background-color: #3778c2;">
+  <a class="nav-link" href="/">
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" class="bi bi-arrow-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+</svg></a>
+  <h2 class="fw-semibold text-uppercase mx-auto" style="color: white">New Category</h2>
+</nav>
+<div class="new-food-container d-grid justify-content-center mt-2">
+    <h1>Create New Category</h1>
+  <%= form_with model: @group, url: user_group_index_path(current_user.id) do |f| %>
+    <div class="form-group">
+        <div class="form-outline mb-4">
+            <%= f.label :name %><br />
+            <%= f.text_field :name, class: "form-control form-control-lg" %>
+        </div>
+       <div class="form-outline mb-4">
+            <%= f.label :icon, class: "form-label" %><br />
+            <%= f.text_field :icon, placeholder: "Insert A valid icon link", class: "form-control form-control-lg" %>
+        </div>
+        <div class="form-outline mb-4">
+       <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          View Exaples of Image URL for Category
+          </button>
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+          <div class="modal-content">
+          <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Category Image Links</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+          <ul class="list-group">
+            <li class="list-group-item">Fast Food: <br />'https://img.freepik.com/free-vector/vector-cartoon-illustration-traditional-set-fast-food-meal_1441-331.jpg?w=2000'</li>
+            <li class="list-group-item">Drinks:<br /> 'https://cdn-icons-png.flaticon.com/512/820/820603.png'</li>
+            <li class="list-group-item">Shoes: <br />'https://img.freepik.com/premium-vector/simple-illustration-red-white-sneaker_9620-351.jpg?w=2000'</li>
+            <li class="list-group-item">Clothing:<br /> 'https://images.all-free-download.com/images/graphiclarge/clothing_and_accessories_color_icons_311124.jpg' </li>
+            <li class="list-group-item">Movies:<br /> 'https://previews.123rf.com/images/yupiramos/yupiramos1511/yupiramos151106394/48288943-cinema-concept-with-movies-icons-design-vector-illustration-10-eps-graphic.jpg' </li>
+          </ul>
+          </div>
+          <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+          </div>
+          </div>
+          </div>
+        </div>
+        <div class="submit-btn">
+             <%= f.submit 'Add Category',  class: "btn btn-primary btn-lg btn-block"  %>
+        </div>
+    </div>
+    <% end %>
+</div>

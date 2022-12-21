@@ -1,5 +1,18 @@
-<p>Welcome <%= @email %>!</p>
+<section class="vh-100" style="background-color: #3778c2;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card shadow-2-strong" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+                <p class="form-label" >Welcome <%= @email %>!</p>
+                  <p class="form-label" >You can confirm your account email through the link below:</p>
+                     <p class="form-label" ><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<p>You can confirm your account email through the link below:</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+
