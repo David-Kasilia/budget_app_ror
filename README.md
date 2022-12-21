@@ -30,7 +30,7 @@
 
 # 📖 BUDGET APP WITH ROR <a name="about-project"></a>
 
-> The Blog app will be a classic example of a blog website. You will create a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
+> This is building a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what. 
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -50,6 +50,13 @@
   <summary>Server</summary>
   <ul>
     <li><a href="https://expressjs.com/">Puma</a></li>
+  </ul>
+</details>
+
+<details>
+  <summary>Style</summary>
+  <ul>
+    <li><a href="https://getbootstrap.com/docs/5.2/getting-started/introduction/">Bootstrap</a></li>
   </ul>
 </details>
 
@@ -148,7 +155,7 @@ Feel free to check the [issues page](../../issues/).
 
 > Write a message to encourage readers to support your project
 
-If you like this project...
+If you like this project I will Appreciate a Star
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -158,7 +165,7 @@ If you like this project...
 
 > Give credit to everyone who inspired your codebase.
 
-I would like to thank...
+I would like to thank Microverse
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
