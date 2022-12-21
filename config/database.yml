@@ -92,3 +92,4 @@ production:
   database: budget_app_ror_production
   username: budget_app_ror
   password: <%= ENV["BUDGET_APP_ROR_DATABASE_PASSWORD"] %>
+   url: <%= ENV["DATABASE_URL"] %>
