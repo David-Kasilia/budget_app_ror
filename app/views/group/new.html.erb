@@ -1,8 +1,9 @@
 <nav class="navbar d-flex justify-content-around" style="background-color: #3778c2;">
-  <a class="nav-link" href="/">
+  <%= link_to user_group_index_path(current_user.id), class: 'text-decoration-none' do %>
   <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" class="bi bi-arrow-left" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
-</svg></a>
+</svg>
+<% end %>
   <h2 class="fw-semibold text-uppercase mx-auto" style="color: white">New Category</h2>
 </nav>
 <div class="new-food-container d-grid justify-content-center mt-2">
@@ -32,11 +33,11 @@
           </div>
           <div class="modal-body">
           <ul class="list-group">
-            <li class="list-group-item">Fast Food: <br />'https://img.freepik.com/free-vector/vector-cartoon-illustration-traditional-set-fast-food-meal_1441-331.jpg?w=2000'</li>
-            <li class="list-group-item">Drinks:<br /> 'https://cdn-icons-png.flaticon.com/512/820/820603.png'</li>
-            <li class="list-group-item">Shoes: <br />'https://img.freepik.com/premium-vector/simple-illustration-red-white-sneaker_9620-351.jpg?w=2000'</li>
-            <li class="list-group-item">Clothing:<br /> 'https://images.all-free-download.com/images/graphiclarge/clothing_and_accessories_color_icons_311124.jpg' </li>
-            <li class="list-group-item">Movies:<br /> 'https://previews.123rf.com/images/yupiramos/yupiramos1511/yupiramos151106394/48288943-cinema-concept-with-movies-icons-design-vector-illustration-10-eps-graphic.jpg' </li>
+            <li class="list-group-item">Fast Food: <br />https://img.freepik.com/free-vector/vector-cartoon-illustration-traditional-set-fast-food-meal_1441-331.jpg?w=2000</li>
+            <li class="list-group-item">Drinks:<br /> https://cdn-icons-png.flaticon.com/512/820/820603.png</li>
+            <li class="list-group-item">Shoes: <br />https://img.freepik.com/premium-vector/simple-illustration-red-white-sneaker_9620-351.jpg?w=2000</li>
+            <li class="list-group-item">Clothing:<br /> https://images.all-free-download.com/images/graphiclarge/clothing_and_accessories_color_icons_311124.jpg </li>
+            <li class="list-group-item">Movies:<br /> https://previews.123rf.com/images/yupiramos/yupiramos1511/yupiramos151106394/48288943-cinema-concept-with-movies-icons-design-vector-illustration-10-eps-graphic.jpg </li>
           </ul>
           </div>
           <div class="modal-footer">

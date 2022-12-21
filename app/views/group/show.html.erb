@@ -1,6 +1,6 @@
-<nav class="navbar" style="background-color: #3778c2; >
-  <div class="container-fluid justify-content-start" style="background-color: #3778c2;">
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+<nav class="navbar" style="background-color: #3778c2;" >
+  <div class="container-fluid justify-content-around ms-4 me-4" style="background-color: #3778c2;">
+    <button class="navbar-toggler me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-list" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
         </svg>
@@ -8,7 +8,7 @@
     <div class="mx-auto" >
     <h2 class="fw-semibold text-uppercase" style="color: white">Transactions</h2>
     </div>
-    <div class="mb-1">
+    <div class="mb-1 me-5">
     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="white" class="bi bi-search" viewBox="0 0 16 16">
     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
     </svg>
@@ -18,14 +18,14 @@
       <div class="offcanvas-header">
        <% if user_signed_in? %>
         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
-      <p >Logged in as <strong style="color: Green">(<%= current_user.email %>)</strong>.</p>
+      <p >Logged in as: <strong style="color: Green"><br /><%= current_user.name %> <br/>(<%= current_user.email %>)</strong>.</p>
      </h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
-           <a href="/" class="nav-link">Home</a>
+            <%= link_to "Home", user_group_index_path(current_user.id), class:"nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to 'Edit profile', edit_user_registration_path, class: "nav-link " %> 
