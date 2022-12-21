@@ -116,8 +116,12 @@ To run tests, run the following command:
 ### Deployment
 
 You can deploy this project using:
-> Render
+> Render <br/>
 > Here is a link to the deployment: https://budget-app-5474.onrender.com
+
+### Project Documentation
+>  Below is a link to the project documentation: <br/>
+https://www.loom.com/share/940be76958744ae58bb95be2db9ba869
 
 
 
