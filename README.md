@@ -60,8 +60,6 @@
   </ul>
 </details>
 
-<details>
-
 ## 💻 Getting Started <a name="getting-started"></a>
 
 > The Following is how you can use the Blog App
