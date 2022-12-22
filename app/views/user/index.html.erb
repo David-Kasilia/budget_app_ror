@@ -18,7 +18,7 @@
       <div class="offcanvas-header">
        <% if user_signed_in? %>
         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
-      <p >Logged in as <strong style="color: Green">(<%= current_user.email %>)</strong>.</p>
+      <p >Logged in as: <strong style="color: Green"><br /><%= current_user.name %> <br/>(<%= current_user.email %>)</strong>.</p>
      </h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>

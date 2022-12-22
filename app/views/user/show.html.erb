@@ -18,7 +18,7 @@
       <div class="offcanvas-header">
        <% if user_signed_in? %>
         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
-      <p >Logged in as <strong style="color: Green">(<%= current_user.email %>)</strong>.</p>
+      <p >Logged in as: <strong style="color: Green"><br /><%= current_user.name %> <br/>(<%= current_user.email %>)</strong>.</p>
      </h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
@@ -41,14 +41,22 @@
   </div>
 </nav>
 <div class="user_view mt-5">
-<div class="card ms-5" style="width: 18rem;">
+<div class="card ms-5" style="width: 30rem;">
   <div class="card-header">
    Here are <%= @user.name %> Details:
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item"><%= @user.name %></li>
-    <li class="list-group-item"><%= @user.email %></li>
-    <li class="list-group-item"><%= @user.role %></li>
+    <li class="list-group-item">User Name: <%= @user.name %></li>
+    <li class="list-group-item">User Email: <%= @user.email %></li>
+    <li class="list-group-item">Role: <%= @user.role %></li>
   </ul>
+  </div>
+</div>
+
+<div class="card ms-5 mt-5" style="width: 30rem;">
+  <h5 class="card-header text-success">User Authenticated Successfully</h5>
+  <div class="card-body">
+    <h5 class="card-title">Welcome To Your Budget</h5>
+   <%= link_to "Proceed To View Your Budget", user_group_index_path(current_user.id), class:"btn btn-primary" %>
   </div>
 </div>

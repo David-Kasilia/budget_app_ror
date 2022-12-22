@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :entity
     resources :group_entity
   end
-  
+
   # Routes
   # get 'splash_screen/index'
   # get 'group_entity/index'
